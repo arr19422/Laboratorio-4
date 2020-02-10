@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/principal">
+
+    <fragment
+        android:id="@+id/detalles"
+        android:name="com.example.laboratorio4.Detalles"
+        android:label="Detalles">
+        <action
+            android:id="@+id/action_detalles_to_comentario"
+            app:destination="@id/comentario" />
+        <action
+            android:id="@+id/action_detalles_to_principal2"
+            app:destination="@id/principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/acercaDe"
+        android:name="com.example.laboratorio4.AcercaDe"
+        android:label="fragment_acerca_de"
+        tools:layout="@layout/fragment_acerca_de" >
+        <action
+            android:id="@+id/action_acercaDe_to_principal2"
+            app:destination="@id/principal"
+            app:popUpTo="@+id/acercaDe" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentario"
+        android:name="com.example.laboratorio4.Comentario"
+        android:label="fragment_comentario"
+        tools:layout="@layout/fragment_comentario" >
+        <action
+            android:id="@+id/action_comentario_to_detalles"
+            app:destination="@id/detalles"
+            app:popUpTo="@+id/detalles" />
+    </fragment>
+    <fragment
+        android:id="@+id/principal"
+        android:name="com.example.laboratorio4.Principal"
+        android:label="Principal">
+        <action
+            android:id="@+id/action_principal2_to_detalles"
+            app:destination="@id/detalles" />
+        <action
+            android:id="@+id/action_principal2_to_acercaDe"
+            app:destination="@id/acercaDe" />
+    </fragment>
+</navigation>
